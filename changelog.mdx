@@ -1,0 +1,134 @@
+---
+title: Changelog
+description: Track the latest updates, improvements, and new features released in Knowiterp to stay informed about platform enhancements.
+---
+
+## Recent Updates
+
+<Callout kind="info">
+  Knowiterp releases updates regularly to enhance manufacturing workflows, inventory management, and financial reporting. Review changes below and check your version in the dashboard settings.
+</Callout>
+
+<Update label="2024-11-15" description="v2.1.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added production scheduling dashboard with Gantt chart views for TMT bars and steel tube manufacturers.
+- Introduced pharma stockist module for batch tracking and expiry date alerts.
+- Enhanced metal fabrication tools with real-time material yield calculations.
+
+## Improvements
+
+- Optimized inventory queries for faster performance during peak production hours.
+- Improved mobile responsiveness for safety shoes and footwear production logs.
+
+## Bug Fixes
+
+- Fixed sync issues between finance and production modules.
+- Resolved export errors for channel and section manufacturing reports.
+
+</Update>
+
+<Update label="2024-10-20" description="v2.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Launched fasteners and forging unit integration with automated quality control checklists.
+- Added strips and coil processing workflow with multi-stage approval routing.
+- Integrated real-time webhook support for external inventory systems.
+
+## Breaking Changes
+
+- Updated API endpoints from `/v1/production` to `/v2/manufacturing`. Migrate using the guide below.
+
+## Bug Fixes
+
+- Corrected calculation errors in TMT bars cost sheets.
+- Fixed login timeouts during high-volume pharma distributor sessions.
+
+</Update>
+
+<Update label="2024-09-10" description="v1.9.0" tags={["bugfix", "improvement"]}>
+
+## Improvements
+
+- Streamlined finance reconciliation for metal fabrication units.
+- Enhanced reporting filters for safety shoes production analytics.
+
+## Bug Fixes
+
+- Patched security vulnerability in inventory export endpoints.
+- Resolved dashboard refresh issues for multi-user environments.
+
+</Update>
+
+## Major Release Summary
+
+<Columns cols={2}>
+  <Card title="Production Enhancements" icon="settings" href="#recent-updates">
+    New tools for manufacturers including Gantt scheduling and yield tracking.
+  </Card>
+  <Card title="Inventory & Finance" icon="database" href="#recent-updates">
+    Better batch management and cost calculations across industries.
+  </Card>
+</Columns>
+
+## Migration Guide
+
+Use these steps to update to the latest version. Backup your data first.
+
+<Steps>
+  <Step title="Backup Data" icon="database">
+    Export all modules via the dashboard.
+
+````bash
+# From your Knowiterp installation directory
+knowiterp backup --all-modules
+````
+
+  </Step>
+  <Step title="Download Update" icon="download">
+    Get the latest release from your account portal.
+  </Step>
+  <Step title="Apply Update" icon="upload">
+    Run the updater with your license key.
+
+````bash
+knowiterp update --version 2.1.0 --license YOUR_LICENSE_KEY
+````
+
+  </Step>
+  <Step title="Verify" icon="check-circle">
+    Test key workflows like production planning.
+  </Step>
+</Steps>
+
+<Expandable title="Deprecated Features" default-open="true">
+  In v2.0.0, `/v1/production` endpoints are deprecated. Update your integrations:
+
+<Tabs>
+  <Tab title="JavaScript" icon="code">
+````javascript
+// Old
+fetch('https://api.example.com/v1/production');
+
+// New
+fetch('https://api.example.com/v2/manufacturing');
+````
+  </Tab>
+  <Tab title="Python" icon="python">
+````python
+# Old
+response = requests.get('https://api.example.com/v1/production')
+
+# New
+response = requests.get('https://api.example.com/v2/manufacturing')
+````
+  </Tab>
+</Tabs>
+
+</Expandable>
+
+<Callout kind="tip">
+  Subscribe to notifications in your dashboard to get email alerts for new releases.
+</Callout>

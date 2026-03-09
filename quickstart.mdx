@@ -1,0 +1,157 @@
+---
+title: Getting Started with Knowiterp
+description: Set up your Knowiterp account and complete your first steps to begin managing your manufacturing processes right away.
+---
+
+## Prerequisites
+
+<Callout kind="info">
+Before starting, ensure you have:
+- A valid email address for account verification
+- Company details ready: name, address, industry type (e.g., manufacturing)
+- Browser: Latest Chrome, Firefox, or Safari
+- Optional: API access for integrations
+</Callout>
+
+## Create and Verify Your Account
+
+Follow these steps to set up your Knowiterp account.
+
+<Steps>
+  <Step title="Sign Up" icon="user-plus">
+    Visit `https://app.knowiterp.com/signup` and enter your email, password, and company name.
+    
+    Select your industry, such as TMT Bars Manufacturer or Pharma Distributor.
+  </Step>
+  
+  <Step title="Verify Email" icon="mail">
+    Check your inbox for the verification email from Knowiterp.
+    
+    Click the verification link to activate your account.
+  </Step>
+  
+  <Step title="Complete Profile" icon="edit-3">
+    Return to the signup page or dashboard prompt.
+    
+    Add basic company details: address, phone, and initial warehouse location.
+  </Step>
+</Steps>
+
+## Log In and Access the Dashboard
+
+<Callout kind="tip">
+Use your verified credentials to log in at `https://app.knowiterp.com/login`.
+</Callout>
+
+Once logged in, you land on the main dashboard. It shows key metrics like inventory levels, production status, and recent orders.
+
+<Tabs>
+  <Tab title="Web Dashboard" icon="globe">
+    The web interface provides full access to all modules.
+    
+    Key sections:
+    
+    - Production planning
+    - Inventory tracking
+    - Financial reports
+  </Tab>
+  
+  <Tab title="Mobile App" icon="smartphone">
+    Download the Knowiterp app from your app store.
+    
+    Scan QR code from dashboard for quick setup.
+    
+    Ideal for on-floor inventory checks.
+  </Tab>
+</Tabs>
+
+## Configure Initial Settings
+
+Set up your company profile and basic configurations.
+
+<Steps>
+  <Step title="Company Profile" icon="building">
+    Go to `Settings > Company`.
+    
+    Update:
+    
+    | Field       | Example Value              |
+    |-------------|----------------------------|
+    | Company Name | Acme Manufacturing Inc.   |
+    | Industry    | Steel Tube Manufacturer   |
+    | Currency    | USD                       |
+    
+    Save changes.
+  </Step>
+  
+  <Step title="Basic Modules" icon="settings">
+    Enable core modules:
+    
+    1. Inventory
+    2. Production
+    3. Finance
+    
+    Set default warehouse and units (e.g., kg, pieces).
+  </Step>
+</Steps>
+
+## Explore Main Interface
+
+Navigate to core areas for production and inventory management.
+
+<Columns cols={3}>
+  <Card title="Production" icon="activity" href="#production">
+    Plan jobs, track work orders, and monitor shop floor.
+  </Card>
+  
+  <Card title="Inventory" icon="package" href="#inventory">
+    Manage stock levels, suppliers, and purchases.
+  </Card>
+  
+  <Card title="Finance" icon="dollar-sign" href="#finance">
+    Handle invoices, payments, and reports.
+  </Card>
+</Columns>
+
+<Expandable title="API Integration for Advanced Setup" default-open="false">
+  For programmatic access, use the API.
+  
+  <CodeGroup tabs="JavaScript,cURL">
+  ````javascript
+  const response = await fetch('https://api.knowiterp.com/v1/company', {
+    method: 'POST',
+    headers: {
+      'Authorization': 'Bearer YOUR_API_KEY',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      name: 'Acme Manufacturing',
+      industry: 'TMT Bars'
+    })
+  });
+  ````
+  
+  ````bash
+  curl -X POST https://api.knowiterp.com/v1/company \
+    -H "Authorization: Bearer YOUR_API_KEY" \
+    -H "Content-Type: application/json" \
+    -d '{"name": "Acme Manufacturing", "industry": "TMT Bars"}'
+  ````
+  </CodeGroup>
+</Expandable>
+
+## Next Steps
+
+<Callout kind="success">
+Congratulations! You're ready to manage manufacturing processes with Knowiterp.
+</Callout>
+
+<Columns cols={2}>
+  <Card title="Authentication" icon="shield" href="/authentication">
+    Secure your API and user access.
+  </Card>
+  
+  <Card title="Production Guide" icon="hard-drive" href="/guides/production">
+    Dive into production workflows.
+  </Card>
+</Columns>
